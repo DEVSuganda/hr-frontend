@@ -17,14 +17,16 @@ import SalaryAndFinance from "./MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "./MainPages/Sales/Sales";
 import Attendance from "./MainPages/Attendance/Attendance";
 import Login from "./MainPages/Authentication/Login";
-//import Navbar from "./components/NavBar";
+import Layout from "./components/Layout";
 function App(){
   
+  
   return ( 
-  <div>
-    <Login />
+  <>
     
+    <MuiDrawer />
     <Routes>
+    <Route path="Login" element={<Login />}></Route>
       <Route path="Holidays" element={<Holidays />}></Route>
       <Route path="Onboard" element={<Onboard />}></Route>
       <Route path="Profiles" element={<Profiles />}></Route>
@@ -40,12 +42,12 @@ function App(){
       <Route path="Sales" element={<Sales />}></Route>
       <Route path="Attendance" element={<Attendance />}></Route>
       <Route path="MuiDrawer" element={<MuiDrawer />}></Route>
-      <Route path="Login" element={<Login />}></Route>
-    </Routes>
       
+    </Routes>
+  
     
       
-  </div>
+  </>
   )
 }
 
