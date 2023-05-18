@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Box, Link, Input, Button, Typography, FormControl, FormLabel} from "@mui/material";
+import { Box, Input, Button, Typography, FormControl, FormLabel} from "@mui/material";
+import { Outlet, Link } from "react-router-dom";
+
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [mounted, setMounted] = React.useState(false);
@@ -65,7 +67,7 @@ const Login = () => {
           <Button 
           sx={{ mt: 1 /* margin top */ }}
           //onClick={() => navigate('MuiDrawer')}
-          >Log in</Button>
+          ><Link to="/MuiDrawer">Log in</Link></Button>
           <Typography>
             Don't have an account?
           </Typography>

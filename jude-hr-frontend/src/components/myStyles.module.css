@@ -1,0 +1,30 @@
+.bigblue {
+    color: DodgerBlue;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
+
+.forContainers {
+    color: DodgerBlue;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.mainbody {
+    background-color: #d8dce6;
+    color: white;
+    padding: 2em;
+    font-family: Arial;
+    text-align: center;
+    flex-grow: 2;
+    align-content: center;
+  }
+
+  .forTextOnBackground {
+    color: rgb(27, 18, 18);
+    text-align: left;
+    padding: 1em;
+    
+  }
