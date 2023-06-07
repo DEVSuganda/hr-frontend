@@ -9,23 +9,24 @@ import AdminDashboard from "./MainPages/Dashboard/AdminDashboard";
 import EmployeeDashboard from "./MainPages/Dashboard/EmployeeDashboard";
 import KnowledgeBase from "./MainPages/KnowledgeBase/KnowledgeBase";
 import Performance from "./MainPages/Performance/Performance";
-import Policies from "./MainPages/Policies/Policies";
+import Assets from "./MainPages/Assets/Assets";
 import Projects from "./MainPages/Projects/Projects";
-import RecruitAndOnboard from "./MainPages/RecruitAndOnboard/RecruitandOnboard";
+import RecruitAndOnboard from "./MainPages/RecruitAndOnboard/RecruitAndOnboard";
 import Resignation from "./MainPages/Resignation/Resignation";
 import SalaryAndFinance from "./MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "./MainPages/Sales/Sales";
 import Attendance from "./MainPages/Attendance/Attendance";
 import Login from "./MainPages/Authentication/Login";
 import Layout from "./components/Layout";
+import MuiDrawer2 from "./components/MuiDrawer2";
 function App(){
   
   
   return ( 
   <>
     
-    <MuiDrawer />
-    <Routes>
+    <MuiDrawer2 />
+    {/* <Routes>
     <Route path="Login" element={<Login />}></Route>
       <Route path="Holidays" element={<Holidays />}></Route>
       <Route path="Onboard" element={<Onboard />}></Route>
@@ -41,9 +42,9 @@ function App(){
       <Route path="SalaryAndFinance" element={<SalaryAndFinance />}></Route>
       <Route path="Sales" element={<Sales />}></Route>
       <Route path="Attendance" element={<Attendance />}></Route>
-      <Route path="MuiDrawer" element={<MuiDrawer />}></Route>
+      <Route path="MuiDrawer2" element={<MuiDrawer2 />}></Route>
       
-    </Routes>
+    </Routes> */}
   
     
       
