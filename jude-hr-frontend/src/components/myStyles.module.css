@@ -5,26 +5,107 @@
     text-align: center;
   }
 
-.forContainers {
-    color: DodgerBlue;
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
+.forContainers1st {
+    
+  color: rgb(4, 4, 4);
+  text-align: left;
+  padding-top: 1em;
+
+}
+
+.forContainers2nd {
+  
+  color: rgb(132, 108, 108);
+  text-align: left;
+    
+}
+
+.forContainers3rd {
+  color: rgb(132, 108, 108);
+    text-align: left;
+    padding-top: 1em;
+    
 }
 
 .mainbody {
-    background-color: #d8dce6;
+    background-color: #ebebeb;
     color: white;
-    padding: 2em;
+    padding-top: 5em;
+    padding-left: 1em;
     font-family: Arial;
     text-align: center;
-    flex-grow: 2;
+    flex-grow: 1;
     align-content: center;
+    padding-right: 1em;
+    
+    
   }
 
   .forTextOnBackground {
-    color: rgb(27, 18, 18);
+    color: rgb(4, 4, 4);
+    text-align: left;
+    padding: 0.5em;
+    
+    
+    
+  }
+
+  .forMinorTextOnBackground {
+    color: rgb(132, 108, 108);
     text-align: left;
     padding: 1em;
+    flex-grow: 1;
+    
+  }
+
+
+  .centeringContent {
+    
+    align-items: center;
+    
+    
+  }
+
+  .forProfilePictures {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    
+    
+    
+    
+  }
+
+
+  .forMainText {
+    color: rgb(4, 4, 4);
+    text-align: center;
+    padding: 0.1em;
+    
+
+  }
+
+
+  .forMinorMainText {
+    color: rgb(132, 108, 108);
+    text-align: center;
+    padding: 0.1em;
+    
+  }
+
+
+  .forAddButton {
+    
+    align-content: center;
+    align-self: center;
+    color: #161615;
+    
+    
+  }
+
+  .knowledgeBaseText {
+    color: rgb(172, 73, 34);
+    text-align: left;
+    padding-bottom: 0em;
     
   }

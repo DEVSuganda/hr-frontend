@@ -1,4 +1,4 @@
-import { Drawer, Box, AppBar, Stack, Toolbar, Button, Typography, IconButton, ListItem, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Drawer, Box, AppBar, Stack, Toolbar, Button, Typography, IconButton, ListItem, List, ListItemButton, Divider, ListItemIcon, ListItemText } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu'
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
@@ -16,11 +16,22 @@ import PolicyRoundedIcon from '@mui/icons-material/PolicyRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
 import SearchIcon from '@mui/icons-material/Search';
-//import '../App.css';
 import { useState } from "react";
+import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import { Outlet, Link, useNavigate } from "react-router-dom";
 export const MuiDrawer = () => {
   const navigate = useNavigate()
+
+
+  //open and close transition
+  const drawerWidth = 240;
+
+  
+
+
+  
+
+  //Items List
   const itemsList = [
     {
     text: "Dashboard",
@@ -147,6 +158,7 @@ export const MuiDrawer = () => {
         <Drawer 
             sx={{ flexGrow: 1, color: 'success.dark', p: 3 }}
             anchor='left'
+            
             open={isDrawerOpen}
             onClose={() => setIsDrawerOpen(false)}>
             <Box p={3} width='25' textAlign='center' role='presentation' bgcolor='#1974d2' flex='1' color="#f2f2ed">
