@@ -7,6 +7,7 @@ import { Typography, Stack, Button } from '@mui/material';
 import styles from '../../components/myStyles.module.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AddIcon from '@mui/icons-material/Add';
+import AddProjectModal from '../../components/modals/AddProjectModal';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -28,9 +29,7 @@ export default function Projects() {
     <Typography className={styles.forTextOnBackground} variant='h6'>Projects</Typography>
       <Box sx={{display: 'flex'}}>
       <Typography className={styles.forMinorTextOnBackground}>Projects</Typography>
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton}>
-        Add Project
-      </Button>
+      <AddProjectModal/>
       </Box>
 
 

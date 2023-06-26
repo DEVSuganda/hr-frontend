@@ -6,9 +6,10 @@ import Grid from '@mui/material/Grid';
 import { Typography, Stack, Button } from '@mui/material';
 import styles from '../../components/myStyles.module.css'
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
-import pp from '../../assets/EmployeeImages/pp.jpg'
+import client from '../../assets/EmployeeImages/client.jpg'
 import AddIcon from '@mui/icons-material/Add';
-import EmployeeModal from '../../components/modals/EmployeeModal';
+import AddClientModal from '../../components/modals/AddClientModal';
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -26,87 +27,83 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
-
-
 // // const getProfileImage = () =>{
 //         to be done later
 // // }
 
-export default function Profiles() {
+export default function Clients() {
   return (
     <>
     <div>
     <Box sx={{ flexGrow: 1 }}>
-      <Typography className={styles.forTextOnBackground} variant='h6'>Employees</Typography>
+      <Typography className={styles.forTextOnBackground} variant='h6'>Clients</Typography>
       <Box sx={{display: 'flex'}}>
-      <Typography className={styles.forMinorTextOnBackground}>Employee Profiles</Typography>
-      
-      <EmployeeModal />
-      
+      <Typography className={styles.forMinorTextOnBackground}>Client Profiles</Typography>
+      <AddClientModal />
       </Box>
       <Grid container spacing={2} columns={11} rowSpacing={4} >
         <Grid item xs={5} md={3.5}>
         <Item>
-        <img src={pp} className={styles.forProfilePictures}></img>
+        <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
         </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
 
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures}></img>
           <Typography className={styles.forMainText}>Name</Typography>
-          <Typography className={styles.forMinorMainText}>Held Position</Typography>
+          <Typography className={styles.forMinorMainText}>Company Information</Typography>
 
           </Item>
         </Grid>

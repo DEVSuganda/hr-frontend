@@ -22,6 +22,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
+import AddSaleModal from '../../components/modals/AddSaleModal';
 
 interface Data {
   calories: number;
@@ -236,7 +237,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           id="tableTitle"
           component="div"
         >
-          Client Information
+          Sales Information
         </Typography>
       )}
       {numSelected > 0 ? (
@@ -336,9 +337,7 @@ export default function Sales() {
     <Typography className={styles.forTextOnBackground} variant='h6'>Sales</Typography>
       <Box sx={{display: 'flex'}}>
       <Typography className={styles.forMinorTextOnBackground}>Sales Information</Typography>
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton}>
-        Add Client
-      </Button>
+      <AddSaleModal/>
       </Box>
     
     <Box sx={{ width: '100%' }}>

@@ -5,3 +5,13 @@ body {
     font-family: Arial;
     text-align: center;
   }
+
+  @font-face {
+    font-family: Barlow;
+    src: url(../fonts/Barlow.ttf);
+  }
+
+  .forBarlowText{
+    font-family: Barlow;
+  
+  }

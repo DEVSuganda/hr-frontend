@@ -11,7 +11,7 @@ import KnowledgeBase from "./MainPages/KnowledgeBase/KnowledgeBase";
 import Performance from "./MainPages/Performance/Performance";
 import Assets from "./MainPages/Assets/Assets";
 import Projects from "./MainPages/Projects/Projects";
-import RecruitAndOnboard from "./MainPages/RecruitAndOnboard/RecruitAndOnboard";
+import Clients from "./MainPages/Clients/Clients";
 import Resignation from "./MainPages/Resignation/Resignation";
 import SalaryAndFinance from "./MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "./MainPages/Sales/Sales";
