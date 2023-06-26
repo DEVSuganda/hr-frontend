@@ -1,9 +1,17 @@
-.bigblue {
-    color: DodgerBlue;
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
+@font-face {
+  font-family: Barlow;
+  src: url(../fonts/Barlow.ttf);
+}
+
+.forAppBar {
+    background-color: rgb(244, 153, 48);
+    
+    
   }
+
+
+  
+
 
 .forContainers1st {
     
@@ -32,7 +40,6 @@
     color: white;
     padding-top: 5em;
     padding-left: 1em;
-    font-family: Arial;
     text-align: center;
     flex-grow: 1;
     align-content: center;
@@ -45,6 +52,7 @@
     color: rgb(4, 4, 4);
     text-align: left;
     padding: 0.5em;
+    font-family: JosefinItalic;
     
     
     
@@ -107,5 +115,40 @@
     color: rgb(172, 73, 34);
     text-align: left;
     padding-bottom: 0em;
+    font-family: JosefinItalic;
+    
+  }
+
+  .forLogo {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    
+    
+    
+    
+    
+  }
+
+
+  .forIcons{
+    
+    color: rgb(244, 153, 48);
+    
+    
+  }
+
+  .forDrawerHeader{
+    background-color: rgb(244, 153, 48);
+  }
+
+  
+  .forAdminProfilePictures {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    
+    
+    
     
   }

@@ -22,6 +22,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
+import AddSalaryModal from '../../components/modals/AddSalaryModal';
 
 
 interface Data {
@@ -337,9 +338,7 @@ export default function SalaryAndFinance() {
     <Typography className={styles.forTextOnBackground} variant='h6'>Salaries</Typography>
       <Box sx={{display: 'flex'}}>
       <Typography className={styles.forMinorTextOnBackground}>Employee Salaries</Typography>
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton}>
-        Add Salary
-      </Button>
+      <AddSalaryModal />
       </Box>
 
 

@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Button } from '@mui/material';
+import puff from '../assets/EmployeeImages/puff.png'
 //before
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,8 +19,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 //after
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
@@ -35,7 +34,7 @@ import PolicyRoundedIcon from '@mui/icons-material/PolicyRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
 import SearchIcon from '@mui/icons-material/Search';
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import styles from '../components/myStyles.module.css'
 
 
@@ -49,14 +48,17 @@ import KnowledgeBase from "../MainPages/KnowledgeBase/KnowledgeBase";
 import Performance from "../MainPages/Performance/Performance";
 import Assets from "../MainPages/Assets/Assets";
 import Projects from "../MainPages/Projects/Projects";
-import RecruitAndOnboard from "../MainPages/RecruitAndOnboard/RecruitAndOnboard";
+import Clients from "../MainPages/Clients/Clients";
 import Resignation from "../MainPages/Resignation/Resignation";
 import SalaryAndFinance from "../MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "../MainPages/Sales/Sales";
 import Attendance from "../MainPages/Attendance/Attendance";
 import Login from "../MainPages/Authentication/Login";
+import style from '../App.css';
 
 const drawerWidth = 240;
+
+
 
 
 
@@ -140,59 +142,60 @@ export default function MuiDrawer2() {
 const itemsList = [
   {
   text: "Dashboard",
-  icon: <DashboardRoundedIcon />,
+  icon: <DashboardRoundedIcon className={styles.forIcons}></DashboardRoundedIcon>,
   onClick: () => navigate('AdminDashboard')
   },
   {
     text: "Employees",
-    icon: <PersonOutlineRoundedIcon />,
+    icon: <PersonOutlineRoundedIcon className={styles.forIcons}></PersonOutlineRoundedIcon>,
     onClick: () => navigate('/Profiles')
+    
   },
   {
-      text: "Recruit and Onboard",
-      icon: <PersonAddAltRoundedIcon />,
-      onClick: () => navigate('/RecruitAndOnboard')
+      text: "Clients",
+      icon: <PersonAddAltRoundedIcon className={styles.forIcons}></PersonAddAltRoundedIcon>,
+      onClick: () => navigate('/Clients')
   },
   {
       text: "Salary and Finance",
-      icon: <PaidRoundedIcon />,
+      icon: <PaidRoundedIcon className={styles.forIcons}></PaidRoundedIcon>,
       onClick: () => navigate('/SalaryAndFinance')
   },
   {
     text: "Projects",
-    icon: <FolderSharedRoundedIcon />,
+    icon: <FolderSharedRoundedIcon className={styles.forIcons}></FolderSharedRoundedIcon>,
     onClick: () => navigate('/Projects')
 },
 {
   text: "Sales",
-  icon: <TimelineRoundedIcon />,
+  icon: <TimelineRoundedIcon className={styles.forIcons}></TimelineRoundedIcon>,
   onClick: () => navigate('Sales')
   },
   
       {
         text: "Attendance",
-        icon: <QueryStatsRoundedIcon />,
+        icon: <QueryStatsRoundedIcon className={styles.forIcons}></QueryStatsRoundedIcon>,
         onClick: () => navigate('Attendance')
         },
       {
         text: "Performance",
-        icon: <AutoGraphRoundedIcon />,
+        icon: <AutoGraphRoundedIcon className={styles.forIcons}></AutoGraphRoundedIcon>,
         onClick: () => navigate('Performance')
         },
       {
         text: "Resignation",
-        icon: <ExitToAppRoundedIcon />,
+        icon: <ExitToAppRoundedIcon className={styles.forIcons}></ExitToAppRoundedIcon>,
         onClick: () => navigate('Resignation')
         },
 
       {
         text: "Knowledge Base",
-        icon: <MenuBookRoundedIcon />,
+        icon: <MenuBookRoundedIcon className={styles.forIcons}></MenuBookRoundedIcon>,
         onClick: () => navigate('KnowledgeBase')
         },
       {
         text: "Assets",
-        icon: <PolicyRoundedIcon />,
+        icon: <PolicyRoundedIcon className={styles.forIcons}></PolicyRoundedIcon>,
         onClick: () => navigate('Assets')
         },
 
@@ -215,7 +218,7 @@ const itemsList = [
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar className={styles.forAppBar}>
           <IconButton
             color="inherit"
             aria-label="menu"
@@ -230,7 +233,7 @@ const itemsList = [
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1}}>
-            HR Software
+          <img src={puff} className={styles.forLogo}></img> DEVSUganda
           </Typography>
           
           <IconButton
@@ -267,13 +270,13 @@ const itemsList = [
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+        <DrawerHeader className={styles.forDrawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List className={styles.forDrawerBackground}>
         {itemsList.map((item, index) => {
             const { text, icon, onClick } = item;
             return (
@@ -289,6 +292,8 @@ const itemsList = [
         })}
         </List>
       </Drawer>
+
+
       <main className={styles.mainbody}>
           
           <Routes>
@@ -301,7 +306,7 @@ const itemsList = [
       <Route path="Performance" element={<Performance />}></Route>
       <Route path="Assets" element={<Assets />}></Route>
       <Route path="Projects" element={<Projects />}></Route>
-      <Route path="RecruitAndOnboard" element={<RecruitAndOnboard />}></Route>
+      <Route path="Clients" element={<Clients />}></Route>
       <Route path="Resignation" element={<Resignation />}></Route>
       <Route path="SalaryAndFinance" element={<SalaryAndFinance />}></Route>
       <Route path="Sales" element={<Sales />}></Route>

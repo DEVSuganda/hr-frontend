@@ -1,19 +1,17 @@
 import * as React from 'react';
-import {Button, FormControl, FormLabel, Input, Modal, ModalDialog, Stack, Typography} from '@mui/joy';
-import Add from '@mui/icons-material/Add';
+import {FormControl, FormLabel, Input, Modal, ModalDialog, Stack, Typography} from '@mui/joy';
 
+import AddIcon from '@mui/icons-material/Add';
+import styles from '../../components/myStyles.module.css'
+import { Button } from '@mui/material';
 
 export default function EmployeeModal() {
   const [open, setOpen] = React.useState<boolean>(false);
   return (
     <React.Fragment>
-      <Button
-        variant="outlined"
-        color="neutral"
-        startDecorator={<Add />}
-        onClick={() => setOpen(true)}
-      >
-        New Employee
+      
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)}>
+        Add Employee
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>
         <ModalDialog
