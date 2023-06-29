@@ -48,6 +48,14 @@ export default function EmployeeModal() {
                 <FormLabel>Employee ID</FormLabel>
                 <Input required />
               </FormControl>
+              <FormControl>
+                <FormLabel>Phone Number</FormLabel>
+                <Input required />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Contract Number</FormLabel>
+                <Input required />
+              </FormControl>
               <Button type="submit">Submit</Button>
             </Stack>
           </form>

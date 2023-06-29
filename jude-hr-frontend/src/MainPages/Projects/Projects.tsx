@@ -8,7 +8,7 @@ import styles from '../../components/myStyles.module.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AddIcon from '@mui/icons-material/Add';
 import AddProjectModal from '../../components/modals/AddProjectModal';
-
+import EmployeeAvatarGroup from '../../components/EmployeeAvatarGroup';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -63,7 +63,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
@@ -105,7 +105,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
@@ -147,7 +147,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
@@ -189,7 +189,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
@@ -231,7 +231,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
@@ -274,7 +274,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
