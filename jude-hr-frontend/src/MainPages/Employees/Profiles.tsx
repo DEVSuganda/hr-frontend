@@ -9,6 +9,7 @@ import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
 import pp from '../../assets/EmployeeImages/pp.jpg'
 import AddIcon from '@mui/icons-material/Add';
 import EmployeeModal from '../../components/modals/EmployeeModal';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -33,6 +34,8 @@ const Item = styled(Paper)(({ theme }) => ({
 // // }
 
 export default function Profiles() {
+
+  const navigate = useNavigate();
   return (
     <>
     <div>
@@ -47,56 +50,56 @@ export default function Profiles() {
       <Grid container spacing={2} columns={11} rowSpacing={4} >
         <Grid item xs={5} md={3.5}>
         <Item>
-        <img src={pp} className={styles.forProfilePictures}></img>
+        <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
         </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
           </Item>
@@ -104,7 +107,7 @@ export default function Profiles() {
         <Grid item xs={5} md={3.5}>
           <Item>
 
-          <img src={pp} className={styles.forProfilePictures}></img>
+          <img src={pp} className={styles.forProfilePictures} onClick={() => navigate('/EmployeeProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Held Position</Typography>
 

@@ -3,14 +3,37 @@
   src: url(../fonts/Barlow.ttf);
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg, div {
+  display: block;
+  max-width: 100%;
+  
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
 .forAppBar {
-    background-color: rgb(244, 153, 48);
+    background-color: rgb(24, 210, 185);
     
     
   }
 
-
-  
 
 
 .forContainers1st {
@@ -30,9 +53,55 @@
 }
 
 .forContainersAvatar {
-  padding-bottom: 0.04em;
-  text-align: left;
+  display: flex;
+  margin-left: auto;
+  height: 20;
 }
+
+
+.forRows {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  
+}
+
+.forInfoSpacing{
+  padding: 1em;
+  padding-left: 2em;
+}
+
+.forInfoSpacing2{
+  padding: 1em;
+  padding-left: 10em;
+  
+}
+
+.forInfoSpacing3{
+  padding: 1em;
+  padding-left: 10em;
+  
+}
+
+.forInfoTitle{
+  padding: 1em;
+}
+
+
+.forInfoBlack{
+  color: rgb(4, 4, 4);
+  
+}
+
+.forInfoGrey{
+  color: rgb(132, 108, 108);
+  
+}
+
+.forInfoIcon{
+    padding-left: 24em;
+}
+
 
 .forContainers3rd {
   color: rgb(132, 108, 108);
@@ -99,6 +168,14 @@
 
   }
 
+  .forAttendanceIconColorTick{
+    color: rgb(20, 214, 20);
+  }
+
+  .forAttendanceIconColorCross{
+    color: rgb(231, 6, 6);
+  }
+
 
   .forMinorMainText {
     color: rgb(132, 108, 108);
@@ -113,6 +190,15 @@
     align-content: center;
     align-self: center;
     color: #161615;
+    
+    
+  }
+
+  .forMessageButton {
+    
+    align-content: center;
+    align-self: center;
+    background-color: rgb(246, 202, 198);
     
     
   }
@@ -139,13 +225,13 @@
 
   .forIcons{
     
-    color: rgb(244, 153, 48);
+    color: rgb(24, 210, 185);
     
     
   }
 
   .forDrawerHeader{
-    background-color: rgb(244, 153, 48);
+    background-color: rgb(24, 210, 185);
   }
 
   

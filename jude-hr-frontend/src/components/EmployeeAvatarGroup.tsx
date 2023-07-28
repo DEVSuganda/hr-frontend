@@ -11,7 +11,7 @@ import p4 from '../assets/EmployeeImages/kengo.jpg'
 
 export default function EmployeeAvatarGroup() {
   return (
-    <AvatarGroup total={10} className={styles.forContainersAvatar}>
+    <AvatarGroup total={10} sx={{ height: 20, alignItems: 'baseline', justifyContent: 'left' }}>
       <Avatar src={p1} sx={{ width: 20, height: 20}} />
       <Avatar src={p2} sx={{ width: 20, height: 20 }} />
       <Avatar src={p3} sx={{ width: 20, height: 20 }} />

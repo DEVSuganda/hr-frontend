@@ -10,7 +10,7 @@ export default function AddClientModal() {
   return (
     <React.Fragment>
       
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)}>
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>
         Add Client
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>

@@ -9,7 +9,7 @@ import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
 import client from '../../assets/EmployeeImages/client.jpg'
 import AddIcon from '@mui/icons-material/Add';
 import AddClientModal from '../../components/modals/AddClientModal';
-
+import { Route, Routes, useNavigate } from 'react-router-dom'; 
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -32,6 +32,8 @@ const Item = styled(Paper)(({ theme }) => ({
 // // }
 
 export default function Clients() {
+
+  const navigate = useNavigate();
   return (
     <>
     <div>
@@ -44,56 +46,56 @@ export default function Clients() {
       <Grid container spacing={2} columns={11} rowSpacing={4} >
         <Grid item xs={5} md={3.5}>
         <Item>
-        <img src={client} className={styles.forProfilePictures}></img>
+        <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
         </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
         </Grid>
         <Grid item xs={5} md={3.5}>
           <Item>
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
           </Item>
@@ -101,7 +103,7 @@ export default function Clients() {
         <Grid item xs={5} md={3.5}>
           <Item>
 
-          <img src={client} className={styles.forProfilePictures}></img>
+          <img src={client} className={styles.forProfilePictures} onClick={() => navigate('/ClientProfile')}></img>
           <Typography className={styles.forMainText}>Name</Typography>
           <Typography className={styles.forMinorMainText}>Company Information</Typography>
 

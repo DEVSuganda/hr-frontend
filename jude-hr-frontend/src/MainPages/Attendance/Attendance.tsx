@@ -23,46 +23,40 @@ import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
 import AddResigneeeModal from '../../components/modals/AddResigneeModal';
+import DoneIcon from '@mui/icons-material/Done';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 interface Data {
-  calories: string;
-  carbs: number;
-  fat: string;
   name: string;
-  protein: number;
+  Day: object;
+  
 }
 
 function createData(
   name: string,
-  calories: string,
-  fat: string,
-  carbs: number,
-  protein: number,
+  Day: object,
 ): Data {
   return {
     name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    Day,
   };
 }
 
 const rows = [
-  createData('john smith', "Resigned", "dvd", 67, 4.3),
-  createData('Donut', "Resigned", "programmer", 51, 4.9),
-  createData('tom jill', "Resigned", "programmer", 24, 6.0),
-  createData('Kengo Wada', "Resigned", "programmer", 24, 4.0),
-  createData('Gingerbread', "Resigned", "programmer", 49, 3.9),
-  createData('Honeycomb', "Resigned", "programmer", 87, 6.5),
-  createData('leo katwere', "Resigned", "programmer", 37, 4.3),
-  createData('Jelly Bean', "Resigned", "programmer", 94, 0.0),
-  createData('KitKat', "Resigned", "programmer", 65, 7.0),
-  createData('Lollipop', "Resigned", "programmer", 98, 0.0),
-  createData('kate yoogg', "Resigned", "programmer", 81, 2.0),
-  createData('Nougat', "Resigned", "programmer", 9, 37.0),
-  createData('Oreo', "Resigned", "programmer", 63, 4.0),
+  createData('john smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Donut', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
+  createData('tom jill', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+   createData('john smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Donut', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
+  createData('desomond smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Cat', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
+  createData('Aaron smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Zen', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
+  createData('John smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Zaonut', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
+  createData('Lack smith', <DoneIcon className={styles.forAttendanceIconColorTick}></DoneIcon>),
+  createData('Put', <CloseIcon className={styles.forAttendanceIconColorCross}></CloseIcon>),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -120,28 +114,46 @@ const headCells: readonly HeadCell[] = [
     label: 'Employee',
   },
   {
-    id: 'calories',
-    numeric: true,
+    id: 'Day',
+    numeric: false,
     disablePadding: false,
-    label: 'Status',
+    label: '1',
   },
   {
-    id: 'fat',
-    numeric: true,
+    id: 'Day',
+    numeric: false,
     disablePadding: false,
-    label: 'Role',
+    label: '2',
   },
   {
-    id: 'carbs',
-    numeric: true,
+    id: 'Day',
+    numeric: false,
     disablePadding: false,
-    label: 'Reason',
+    label: '3',
   },
   {
-    id: 'protein',
-    numeric: true,
+    id: 'Day',
+    numeric: false,
     disablePadding: false,
-    label: 'Resignation Date',
+    label: '4',
+  },
+  {
+    id: 'Day',
+    numeric: false,
+    disablePadding: false,
+    label: '5',
+  },
+  {
+    id: 'Day',
+    numeric: false,
+    disablePadding: false,
+    label: '6',
+  },
+  {
+    id: 'Day',
+    numeric: false,
+    disablePadding: false,
+    label: '7',
   },
 ];
 
@@ -238,7 +250,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           id="tableTitle"
           component="div"
         >
-          Resigned Employees
+          Attendance of Employees
         </Typography>
       )}
       {numSelected > 0 ? (
@@ -260,7 +272,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
 
 export default function Attendance() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
+  const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -338,7 +350,7 @@ export default function Attendance() {
     <Typography className={styles.forTextOnBackground} variant='h6'>Attendance</Typography>
       <Box sx={{display: 'flex'}}>
       <Typography className={styles.forMinorTextOnBackground}>Attendance</Typography>
-      <AddResigneeeModal/>
+       
       </Box>
 
 
@@ -393,10 +405,14 @@ export default function Attendance() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    <TableCell align="left">{row.Day}</TableCell>
+                    
                   </TableRow>
                 );
               })}
