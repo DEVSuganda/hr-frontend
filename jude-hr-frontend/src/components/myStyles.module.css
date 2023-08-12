@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: Barlow;
   src: url(../fonts/Barlow.ttf);
@@ -63,6 +65,11 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: row;
   overflow: auto;
+  
+}
+
+.forSearchBar{
+  padding-right: 2em;
   
 }
 
@@ -138,6 +145,7 @@ p, h1, h2, h3, h4, h5, h6 {
     text-align: left;
     padding: 1em;
     flex-grow: 1;
+    padding-top: 0.1em;
     
   }
 
@@ -164,6 +172,7 @@ p, h1, h2, h3, h4, h5, h6 {
     color: rgb(4, 4, 4);
     text-align: center;
     padding: 0.1em;
+    font-weight: bold;
     
 
   }
@@ -185,11 +194,9 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 
 
-  .forAddButton {
-    
-    align-content: center;
-    align-self: center;
-    color: #161615;
+  .forPayslipButton {
+  
+    color: rgb(24, 210, 185);
     
     
   }
@@ -198,13 +205,13 @@ p, h1, h2, h3, h4, h5, h6 {
     
     align-content: center;
     align-self: center;
-    background-color: rgb(246, 202, 198);
+    background-color: rgb(252, 214, 211);
     
     
   }
 
   .knowledgeBaseText {
-    color: rgb(172, 73, 34);
+    color: rgb(24, 210, 185);
     text-align: left;
     padding-bottom: 0em;
     font-family: JosefinItalic;
@@ -222,6 +229,7 @@ p, h1, h2, h3, h4, h5, h6 {
     
   }
 
+  
 
   .forIcons{
     
@@ -229,6 +237,8 @@ p, h1, h2, h3, h4, h5, h6 {
     
     
   }
+
+  
 
   .forDrawerHeader{
     background-color: rgb(24, 210, 185);

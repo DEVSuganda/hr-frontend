@@ -61,7 +61,7 @@ export default function ClientProfile() {
           <Typography className={styles.forInfoBlack} sx={{fontSize: 18, fontFamily: 'Roboto', paddingTop: 2}}>Employee ID: 559029303</Typography>
           <Typography sx={{fontSize: 16, fontFamily: 'Comic Sans MS', paddingTop: 1}}>Date of Joining: 1st Jan 2020</Typography>
           <div className={styles.forInfoSpacing}>
-          <Button sx={{backgroundColor: 'rgb(244, 153, 48)', color: 'white'}}>SEND MESSAGE</Button>
+          <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'purple'}}>SEND MESSAGE</Button>
           </div>
 
           

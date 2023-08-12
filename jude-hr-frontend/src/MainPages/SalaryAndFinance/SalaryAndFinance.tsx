@@ -23,6 +23,7 @@ import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
 import AddSalaryModal from '../../components/modals/AddSalaryModal';
+import SearchBar from '../../components/SearchBar';
 
 
 interface Data {
@@ -30,7 +31,7 @@ interface Data {
   carbs: number;
   fat: string;
   name: string;
-  protein: number;
+  payslip: object;
 }
 
 function createData(
@@ -38,31 +39,31 @@ function createData(
   calories: number,
   fat: string,
   carbs: number,
-  protein: number,
+  payslip: object,
 ): Data {
   return {
     name,
     calories,
     fat,
     carbs,
-    protein,
+    payslip,
   };
 }
 
 const rows = [
-  createData('john smith', 305, "dvd", 67, 4.3),
-  createData('Donut', 452, "programmer", 51, 4.9),
-  createData('tom jill', 262, "programmer", 24, 6.0),
-  createData('Kengo Wada', 159, "programmer", 24, 4.0),
-  createData('Gingerbread', 356, "programmer", 49, 3.9),
-  createData('Honeycomb', 408, "programmer", 87, 6.5),
-  createData('leo katwere', 237, "programmer", 37, 4.3),
-  createData('Jelly Bean', 375, "programmer", 94, 0.0),
-  createData('KitKat', 518, "programmer", 65, 7.0),
-  createData('Lollipop', 392, "programmer", 98, 0.0),
-  createData('kate yoogg', 318, "programmer", 81, 2.0),
-  createData('Nougat', 360, "programmer", 9, 37.0),
-  createData('Oreo', 437, "programmer", 63, 4.0),
+  createData('john smith', 305, "Web Developer", 67000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Donut', 452, "Team Lead", 51000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('tom jill', 262, "Project Leader", 24000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Kengo Wada', 159, "Web Designer", 24000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Gingerbread', 356, "Web Developer", 49000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Honeycomb', 408, "Back-end Developer", 87000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('leo katwere', 237, "Front-end Developer", 37000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Jelly Bean', 375, "Senior Developer", 94000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('KitKat', 518, "Web Developer", 65000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Lollipop', 392, "Web Developer", 98000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('kate yoogg', 318, "Web Developer", 81000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Nougat', 360, "Web Developer", 91000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('Oreo', 437, "Web Developer", 63000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -117,31 +118,31 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Employee',
+    label: 'EMPLOYEE',
   },
   {
     id: 'calories',
     numeric: true,
     disablePadding: false,
-    label: 'Employee ID',
+    label: 'EMPLOYEE ID',
   },
   {
     id: 'fat',
     numeric: true,
     disablePadding: false,
-    label: 'Role',
+    label: 'ROLE',
   },
   {
     id: 'carbs',
     numeric: true,
     disablePadding: false,
-    label: 'Salary',
+    label: 'SALARY($)',
   },
   {
-    id: 'protein',
+    id: 'payslip',
     numeric: true,
     disablePadding: false,
-    label: 'Payslip',
+    label: 'PAYSLIP',
   },
 ];
 
@@ -164,7 +165,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
   return (
     
-    <TableHead>
+    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -336,8 +337,10 @@ export default function SalaryAndFinance() {
     <>
     
     <Typography className={styles.forTextOnBackground} variant='h6'>Salaries</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Employee Salaries</Typography>
+      
+      <SearchBar/>
       <AddSalaryModal />
       </Box>
 
@@ -396,7 +399,7 @@ export default function SalaryAndFinance() {
                     <TableCell align="right">{row.calories}</TableCell>
                     <TableCell align="right">{row.fat}</TableCell>
                     <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="right">{row.payslip}</TableCell>
                   </TableRow>
                 );
               })}

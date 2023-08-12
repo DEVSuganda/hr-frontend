@@ -12,6 +12,7 @@ import AddProjectModal from '../../components/modals/AddProjectModal';
 import EmployeeAvatarGroup from '../../components/EmployeeAvatarGroup';
 import p1 from '../../assets/EmployeeImages/puff.jpg'
 import LinearProgress from '@mui/material/LinearProgress';
+import SearchBar from '../../components/SearchBar';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -31,8 +32,10 @@ export default function Projects() {
 
 
     <Typography className={styles.forTextOnBackground} variant='h6'>Projects</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Projects</Typography>
+      
+      <SearchBar/>
       <AddProjectModal/>
       </Box>
 

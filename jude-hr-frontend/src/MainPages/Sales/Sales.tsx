@@ -23,45 +23,49 @@ import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
 import AddSaleModal from '../../components/modals/AddSaleModal';
+import SearchBar from '../../components/SearchBar';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import DoneIcon from '@mui/icons-material/Done';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface Data {
   calories: number;
-  carbs: number;
+  status: object;
   fat: string;
   name: string;
-  protein: number;
+  action: object;
 }
 
 function createData(
   name: string,
   calories: number,
   fat: string,
-  carbs: number,
-  protein: number,
+  status: object,
+  action: object,
 ): Data {
   return {
     name,
     calories,
     fat,
-    carbs,
-    protein,
+    status,
+    action,
   };
 }
 
 const rows = [
-  createData('john smith', 305, "dvd", 67, 4.3),
-  createData('Donut', 452, "programmer", 51, 4.9),
-  createData('tom jill', 262, "programmer", 24, 6.0),
-  createData('Kengo Wada', 159, "programmer", 24, 4.0),
-  createData('Gingerbread', 356, "programmer", 49, 3.9),
-  createData('Honeycomb', 408, "programmer", 87, 6.5),
-  createData('leo katwere', 237, "programmer", 37, 4.3),
-  createData('Jelly Bean', 375, "programmer", 94, 0.0),
-  createData('KitKat', 518, "programmer", 65, 7.0),
-  createData('Lollipop', 392, "programmer", 98, 0.0),
-  createData('kate yoogg', 318, "programmer", 81, 2.0),
-  createData('Nougat', 360, "programmer", 9, 37.0),
-  createData('Oreo', 437, "programmer", 63, 4.0),
+  createData('john smith', 305000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
+  createData('Donut', 452000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
+  createData('tom jill', 262000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
+  createData('Kengo Wada', 159000, "12/09/2023", "Accepted", <MoreVertIcon/>),
+  createData('Gingerbread', 356000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
+  createData('Honeycomb', 408000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
+  createData('leo katwere', 237000, "12/09/2023", "Accepted", <MoreVertIcon/>),
+  createData('Jelly Bean', 375000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
+  createData('KitKat', 518000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
+  createData('Lollipop', 392000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
+  createData('kate yoogg', 318000, "12/09/2023", "Expired", <MoreVertIcon/>),
+  createData('Nougat', 360000, "12/09/2023", "Expired", <MoreVertIcon/>),
+  createData('Oreo', 437000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -116,31 +120,31 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Client',
+    label: 'CLIENT',
   },
   {
     id: 'calories',
     numeric: true,
     disablePadding: false,
-    label: 'Client ID',
+    label: 'AMOUNT',
   },
   {
     id: 'fat',
     numeric: true,
     disablePadding: false,
-    label: 'Estimate Date',
+    label: 'EXPIRY DATE',
   },
   {
-    id: 'carbs',
+    id: 'status',
     numeric: true,
     disablePadding: false,
-    label: 'Amount',
+    label: 'STATUS',
   },
   {
-    id: 'protein',
+    id: 'action',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: 'ACTION',
   },
 ];
 
@@ -163,7 +167,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
   return (
     
-    <TableHead>
+    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -335,8 +339,10 @@ export default function Sales() {
     <>
     
     <Typography className={styles.forTextOnBackground} variant='h6'>Sales</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Sales Information</Typography>
+      
+      <SearchBar/>
       <AddSaleModal/>
       </Box>
     
@@ -392,8 +398,8 @@ export default function Sales() {
                     </TableCell>
                     <TableCell align="right">{row.calories}</TableCell>
                     <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="right">{row.status}</TableCell>
+                    <TableCell align="right">{row.action}</TableCell>
                   </TableRow>
                 );
               })}

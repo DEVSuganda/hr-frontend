@@ -111,7 +111,7 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Employee',
+    label: 'EMPLOYEE',
   },
   {
     id: 'Day',
@@ -176,7 +176,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
   return (
     
-    <TableHead>
+    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -250,7 +250,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           id="tableTitle"
           component="div"
         >
-          Attendance of Employees
+          ATTENDANCE OF EMPLOYEES
         </Typography>
       )}
       {numSelected > 0 ? (

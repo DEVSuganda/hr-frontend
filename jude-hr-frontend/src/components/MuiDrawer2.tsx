@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Button } from '@mui/material';
 import puff from '../assets/EmployeeImages/puff.png'
+
 //before
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -157,7 +158,7 @@ const itemsList = [
   {
       text: "Clients",
       icon: <PersonAddAltRoundedIcon className={styles.forIcons}></PersonAddAltRoundedIcon>,
-      onClick: () => navigate('/Clients'),
+      onClick: () => navigate('/Clients')
 
   },
   {
@@ -179,7 +180,7 @@ const itemsList = [
       {
         text: "Attendance",
         icon: <QueryStatsRoundedIcon className={styles.forIcons}></QueryStatsRoundedIcon>,
-        onClick: () => navigate('Attendance'),
+        onClick: () => navigate('Attendance')
         
         },
       // {
@@ -285,7 +286,7 @@ const itemsList = [
         {itemsList.map((item, index) => {
             const { text, icon, onClick } = item;
             return (
-              <Box sx={{":hover": {bgcolor: 'rgb(246, 202, 198)', color: 'white'}}}>
+              <Box sx={{":hover": {bgcolor: 'rgb(252, 214, 211)', color: 'white'}}}>
             <ListItem key={text} onClick={onClick}disablePadding>
               <ListItemButton>
                 <ListItemIcon>

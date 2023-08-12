@@ -1,6 +1,5 @@
 
 import MuiTypography from "./components/Typography";
-import { MuiDrawer } from "./components/MuiDrawer";
 import { Routes, Route } from 'react-router-dom'
 import Holidays from "./MainPages/Employees/Holidays";
 import Onboard from "./MainPages/Employees/Onboard";
@@ -17,14 +16,36 @@ import SalaryAndFinance from "./MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "./MainPages/Sales/Sales";
 import Attendance from "./MainPages/Attendance/Attendance";
 import Login from "./MainPages/Authentication/Login";
-import Layout from "./components/Layout";
 import MuiDrawer2 from "./components/MuiDrawer2";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
 function App(){
-  
+  // const theme = createTheme({
+  //   typography: {
+  //     fontFamily: '"Segoe UI"',
+      
+  //   },
+   
+
+  //   components: {
+  //     MuiCssBaseline: {
+  //       styleOverrides: `
+  //         @font-face {
+  //           font-family: '"Segoe UI"';
+  //           font-style: normal;
+  //           font-display: swap;
+  //           font-weight: 400;
+  //         }
+  //       `,
+  //     },
+  //   },
+  // });
   
   return ( 
   <>
-    
+    {/* <ThemeProvider theme={theme}> */}
+    <CssBaseline />
     <MuiDrawer2 />
     {/* <Routes>
     <Route path="Login" element={<Login />}></Route>
@@ -46,7 +67,7 @@ function App(){
       
     </Routes> */}
   
-    
+    {/* </ThemeProvider> */}
       
   </>
   )
