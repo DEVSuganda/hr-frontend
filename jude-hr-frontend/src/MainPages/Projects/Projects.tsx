@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Typography, Stack, Button } from '@mui/material';
@@ -8,6 +9,10 @@ import styles from '../../components/myStyles.module.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AddIcon from '@mui/icons-material/Add';
 import AddProjectModal from '../../components/modals/AddProjectModal';
+import EmployeeAvatarGroup from '../../components/EmployeeAvatarGroup';
+import p1 from '../../assets/EmployeeImages/puff.jpg'
+import LinearProgress from '@mui/material/LinearProgress';
+import SearchBar from '../../components/SearchBar';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -27,8 +32,10 @@ export default function Projects() {
 
 
     <Typography className={styles.forTextOnBackground} variant='h6'>Projects</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Projects</Typography>
+      
+      <SearchBar/>
       <AddProjectModal/>
       </Box>
 
@@ -36,7 +43,7 @@ export default function Projects() {
       
       <Grid container spacing={2} columns={11} rowSpacing={4} >
         <Grid item xs={5} md={3.5}>
-        <Item>
+        <Item sx={{ overflow: 'auto' }}>
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -58,17 +65,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={26} variant='determinate' sx={{marginTop: 2}} />
           </div>
         </Item>
         </Grid>
@@ -78,7 +85,7 @@ export default function Projects() {
 
 
         <Grid item xs={5} md={3.5}>
-          <Item>
+          <Item sx={{ overflow: 'auto' }}>
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -100,17 +107,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={48} sx={{marginTop: 2}} />
           </div>
           </Item>
         </Grid>
@@ -120,7 +127,7 @@ export default function Projects() {
 
 
         <Grid item xs={5} md={3.5}>
-          <Item>
+          <Item sx={{ overflow: 'auto' }}>
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -142,17 +149,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={86} variant='determinate' sx={{marginTop: 2}} />
           </div>
           </Item>
         </Grid>
@@ -162,7 +169,7 @@ export default function Projects() {
 
 
         <Grid item xs={5} md={3.5}>
-          <Item>
+          <Item sx={{ overflow: 'auto' }}>
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -184,17 +191,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={88} sx={{marginTop: 2}} />
           </div>
           </Item>
         </Grid>
@@ -204,7 +211,7 @@ export default function Projects() {
 
 
         <Grid item xs={5} md={3.5}>
-          <Item>
+          <Item sx={{ overflow: 'auto' }}>
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -226,17 +233,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={50} variant='determinate' sx={{marginTop: 2}} />
           </div>
           </Item>
         </Grid>
@@ -247,7 +254,7 @@ export default function Projects() {
 
 
         <Grid item xs={5} md={3.5}>
-          <Item>
+          <Item sx={{ overflow: 'auto'}} >
           <div>
           <Typography className={styles.forContainers1st}>Office Management  <MoreVertIcon /></Typography>  
           
@@ -269,17 +276,17 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Project Leader:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <Avatar src={p1} sx={{ width: 20, height: 20}} />
           </div>
 
           <div>
           <Typography className={styles.forContainers1st}>Team:</Typography>  
-          <Typography className={styles.forContainers2nd}>pics</Typography>
+          <EmployeeAvatarGroup />
           </div>
 
           <div>
-          <Typography className={styles.forContainers1st}>Progress</Typography>  
-          <Typography className={styles.forContainers2nd}>%age progress bar</Typography>
+          <Typography className={styles.forContainers1st}>Progress:</Typography>  
+          <LinearProgress color="inherit" value={100} variant='determinate' sx={{marginTop: 2}}/>
           </div>
           </Item>
         </Grid>

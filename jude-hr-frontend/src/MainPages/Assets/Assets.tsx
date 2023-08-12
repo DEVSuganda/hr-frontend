@@ -22,11 +22,12 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
-
+import SearchBar from '../../components/SearchBar';
+import AddAssetModal from '../../components/modals/AddAssetModal';
 
 interface Data {
   calories: string;
-  carbs: number;
+  purchase: string;
   fat: string;
   name: string;
   protein: number;
@@ -36,32 +37,32 @@ function createData(
   name: string,
   calories: string,
   fat: string,
-  carbs: number,
+  purchase: string,
   protein: number,
 ): Data {
   return {
     name,
     calories,
     fat,
-    carbs,
+    purchase,
     protein,
   };
 }
 
 const rows = [
-  createData('john smith', "Resigned", "dvd", 67, 4.3),
-  createData('Donut', "Resigned", "programmer", 51, 4.9),
-  createData('tom jill', "Resigned", "programmer", 24, 6.0),
-  createData('Kengo Wada', "Resigned", "programmer", 24, 4.0),
-  createData('Gingerbread', "Resigned", "programmer", 49, 3.9),
-  createData('Honeycomb', "Resigned", "programmer", 87, 6.5),
-  createData('leo katwere', "Resigned", "programmer", 37, 4.3),
-  createData('Jelly Bean', "Resigned", "programmer", 94, 0.0),
-  createData('KitKat', "Resigned", "programmer", 65, 7.0),
-  createData('Lollipop', "Resigned", "programmer", 98, 0.0),
-  createData('kate yoogg', "Resigned", "programmer", 81, 2.0),
-  createData('Nougat', "Resigned", "programmer", 9, 37.0),
-  createData('Oreo', "Resigned", "programmer", 63, 4.0),
+  createData('john smith', "Laptop", "098798", "12/09/2023", 4.3),
+  createData('Donut', "Desktop Computer", "098046", "12/09/2023", 4.9),
+  createData('tom jill', "Mobile Phone", "098546", "12/09/2023", 6.0),
+  createData('Kengo Wada', "Laptop", "098046", "12/09/2023", 4.0),
+  createData('Gingerbread', "Laptop", "097046", "12/09/2023", 3.9),
+  createData('Honeycomb', "Adapter", "098046", "12/09/2023", 6.5),
+  createData('leo katwere', "Laptop", "038046", "12/09/2023", 4.3),
+  createData('Jelly Bean', "Mobile Phone", "098046", "12/09/2023", 0.0),
+  createData('KitKat', "Macbook", "028046", "12/09/2023", 7.0),
+  createData('Lollipop', "Laptop", "098046", "12/09/2023", 0.0),
+  createData('kate yoogg', "Mobile Phone", "098046", "12/09/2023", 2.0),
+  createData('Nougat', "Computer", "088046", "12/09/2023", 37.0),
+  createData('Oreo', "Laptop", "098046", "12/09/2023", 4.0),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -116,31 +117,31 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Asset Name',
+    label: 'ASSET USER',
   },
   {
     id: 'calories',
     numeric: true,
     disablePadding: false,
-    label: 'Asset User',
+    label: 'ASSET NAME',
   },
   {
     id: 'fat',
     numeric: true,
     disablePadding: false,
-    label: 'Asset ID',
+    label: 'ASSET ID',
   },
   {
-    id: 'carbs',
+    id: 'purchase',
     numeric: true,
     disablePadding: false,
-    label: 'Purchase Date',
+    label: 'PURCHASE DATE',
   },
   {
     id: 'protein',
     numeric: true,
     disablePadding: false,
-    label: 'Warranty',
+    label: 'WARRANTY(Months)',
   },
 ];
 
@@ -163,7 +164,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
   return (
     
-    <TableHead>
+    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -335,11 +336,11 @@ export default function Assets() {
     <>
     
     <Typography className={styles.forTextOnBackground} variant='h6'>Assets</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Assets</Typography>
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton}>
-        Add Asset
-      </Button>
+
+      <SearchBar/>
+      <AddAssetModal/>
       </Box>
 
 
@@ -396,7 +397,7 @@ export default function Assets() {
                     </TableCell>
                     <TableCell align="right">{row.calories}</TableCell>
                     <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
+                    <TableCell align="right">{row.purchase}</TableCell>
                     <TableCell align="right">{row.protein}</TableCell>
                   </TableRow>
                 );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FormControl, FormLabel, Input, Modal, ModalDialog, Stack, Typography} from '@mui/joy';
-
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AddIcon from '@mui/icons-material/Add';
 import styles from '../../components/myStyles.module.css'
 import { Button } from '@mui/material';
@@ -10,7 +10,7 @@ export default function EmployeeModal() {
   return (
     <React.Fragment>
       
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)}>
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>
         Add Employee
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -46,6 +46,14 @@ export default function EmployeeModal() {
               </FormControl>
               <FormControl>
                 <FormLabel>Employee ID</FormLabel>
+                <Input required />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Phone Number</FormLabel>
+                <Input required />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Contract Number</FormLabel>
                 <Input required />
               </FormControl>
               <Button type="submit">Submit</Button>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FormControl, FormLabel, Input, Modal, ModalDialog, Stack, Typography} from '@mui/joy';
-
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AddIcon from '@mui/icons-material/Add';
 import styles from '../../components/myStyles.module.css'
 import { Button } from '@mui/material';
@@ -10,7 +10,7 @@ export default function AddResigneeeModal() {
   return (
     <React.Fragment>
       
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)}>
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>
         Add Resignee
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>

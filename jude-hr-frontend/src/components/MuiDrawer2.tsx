@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Button } from '@mui/material';
 import puff from '../assets/EmployeeImages/puff.png'
+
 //before
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,6 +20,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+
 //after
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
@@ -53,6 +55,8 @@ import Resignation from "../MainPages/Resignation/Resignation";
 import SalaryAndFinance from "../MainPages/SalaryAndFinance/SalaryAndFinance";
 import Sales from "../MainPages/Sales/Sales";
 import Attendance from "../MainPages/Attendance/Attendance";
+import EmployeeProfile from '../MainPages/Employees/EmployeeProfile';
+import ClientProfile from '../MainPages/Clients/ClientProfile';
 import Login from "../MainPages/Authentication/Login";
 import style from '../App.css';
 
@@ -155,6 +159,7 @@ const itemsList = [
       text: "Clients",
       icon: <PersonAddAltRoundedIcon className={styles.forIcons}></PersonAddAltRoundedIcon>,
       onClick: () => navigate('/Clients')
+
   },
   {
       text: "Salary and Finance",
@@ -176,12 +181,13 @@ const itemsList = [
         text: "Attendance",
         icon: <QueryStatsRoundedIcon className={styles.forIcons}></QueryStatsRoundedIcon>,
         onClick: () => navigate('Attendance')
+        
         },
-      {
-        text: "Performance",
-        icon: <AutoGraphRoundedIcon className={styles.forIcons}></AutoGraphRoundedIcon>,
-        onClick: () => navigate('Performance')
-        },
+      // {
+      //   text: "Performance",
+      //   icon: <AutoGraphRoundedIcon className={styles.forIcons}></AutoGraphRoundedIcon>,
+      //   onClick: () => navigate('Performance')
+      //   },
       {
         text: "Resignation",
         icon: <ExitToAppRoundedIcon className={styles.forIcons}></ExitToAppRoundedIcon>,
@@ -280,6 +286,7 @@ const itemsList = [
         {itemsList.map((item, index) => {
             const { text, icon, onClick } = item;
             return (
+              <Box sx={{":hover": {bgcolor: 'rgb(252, 214, 211)', color: 'white'}}}>
             <ListItem key={text} onClick={onClick}disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -288,6 +295,7 @@ const itemsList = [
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
+            </Box>
             )
         })}
         </List>
@@ -311,6 +319,8 @@ const itemsList = [
       <Route path="SalaryAndFinance" element={<SalaryAndFinance />}></Route>
       <Route path="Sales" element={<Sales />}></Route>
       <Route path="Attendance" element={<Attendance />}></Route>
+      <Route path="EmployeeProfile" element={<EmployeeProfile />}></Route>
+      <Route path="ClientProfile" element={<ClientProfile />}></Route>
       
       </Routes>
         </main>

@@ -1,17 +1,6 @@
-body {
-    background-color: #282c34;
-    color: white;
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
-  }
 
-  @font-face {
-    font-family: Barlow;
-    src: url(../fonts/Barlow.ttf);
-  }
+ 
 
-  .forBarlowText{
-    font-family: Barlow;
-  
+  Typography {
+    color: blue;
   }

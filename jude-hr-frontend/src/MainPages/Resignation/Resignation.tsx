@@ -23,46 +23,47 @@ import { visuallyHidden } from '@mui/utils';
 import styles from '../../components/myStyles.module.css'
 import AddIcon from '@mui/icons-material/Add';
 import AddResigneeeModal from '../../components/modals/AddResigneeModal';
+import SearchBar from '../../components/SearchBar';
 
 
 interface Data {
-  calories: string;
-  carbs: number;
-  fat: string;
+  status: string;
+  reason: string;
+  role: string;
   name: string;
-  protein: number;
+  resignationdate: string;
 }
 
 function createData(
   name: string,
-  calories: string,
-  fat: string,
-  carbs: number,
-  protein: number,
+  status: string,
+  role: string,
+  reason: string,
+  resignationdate: string,
 ): Data {
   return {
     name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    status,
+    role,
+    reason,
+    resignationdate,
   };
 }
 
 const rows = [
-  createData('john smith', "Resigned", "dvd", 67, 4.3),
-  createData('Donut', "Resigned", "programmer", 51, 4.9),
-  createData('tom jill', "Resigned", "programmer", 24, 6.0),
-  createData('Kengo Wada', "Resigned", "programmer", 24, 4.0),
-  createData('Gingerbread', "Resigned", "programmer", 49, 3.9),
-  createData('Honeycomb', "Resigned", "programmer", 87, 6.5),
-  createData('leo katwere', "Resigned", "programmer", 37, 4.3),
-  createData('Jelly Bean', "Resigned", "programmer", 94, 0.0),
-  createData('KitKat', "Resigned", "programmer", 65, 7.0),
-  createData('Lollipop', "Resigned", "programmer", 98, 0.0),
-  createData('kate yoogg', "Resigned", "programmer", 81, 2.0),
-  createData('Nougat', "Resigned", "programmer", 9, 37.0),
-  createData('Oreo', "Resigned", "programmer", 63, 4.0),
+  createData('john smith', "Resigned", "Web Designer", "Unknown", "12/09/2023"),
+  createData('Donut', "Resigned", "Team Lead", "Unknown", "12/09/2023"),
+  createData('tom jill', "Resigned", "Senior Developer", "Unknown", "12/09/2023"),
+  createData('Kengo Wada', "Resigned", "Senior Developer", "Unknown", "12/09/2023"),
+  createData('Gingerbread', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('Honeycomb', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('leo katwere', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('Jelly Bean', "Resigned", "Web Designer", "Unknown", "12/09/2023"),
+  createData('KitKat', "Resigned", "Project Lead", "Unknown", "12/09/2023"),
+  createData('Lollipop', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('kate yoogg', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('Nougat', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
+  createData('Oreo', "Resigned", "Web Developer", "Unknown", "12/09/2023"),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -117,37 +118,37 @@ const headCells: readonly HeadCell[] = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Employee',
+    label: 'EMPLOYEE',
   },
   {
-    id: 'calories',
+    id: 'status',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: 'STATUS',
   },
   {
-    id: 'fat',
+    id: 'role',
     numeric: true,
     disablePadding: false,
-    label: 'Role',
+    label: 'ROLE',
   },
   {
-    id: 'carbs',
+    id: 'reason',
     numeric: true,
     disablePadding: false,
-    label: 'Reason',
+    label: 'REASON',
   },
   {
-    id: 'protein',
+    id: 'resignationdate',
     numeric: true,
     disablePadding: false,
-    label: 'Resignation Date',
+    label: 'RESIGNATION DATE',
   },
 ];
 
 interface EnhancedTableProps {
   numSelected: number;
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
+  onRequestSort: (event: React.MouseEvent<Unknown>, property: keyof Data) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
@@ -158,13 +159,13 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
     props;
   const createSortHandler =
-    (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof Data) => (event: React.MouseEvent<Unknown>) => {
       onRequestSort(event, property);
     };
 
   return (
     
-    <TableHead>
+    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
@@ -260,14 +261,14 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
 
 export default function Resignation() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
+  const [orderBy, setOrderBy] = React.useState<keyof Data>('status');
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (
-    event: React.MouseEvent<unknown>,
+    event: React.MouseEvent<Unknown>,
     property: keyof Data,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -284,7 +285,7 @@ export default function Resignation() {
     setSelected([]);
   };
 
-  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
+  const handleClick = (event: React.MouseEvent<Unknown>, name: string) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected: readonly string[] = [];
 
@@ -304,7 +305,7 @@ export default function Resignation() {
     setSelected(newSelected);
   };
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (event: Unknown, newPage: number) => {
     setPage(newPage);
   };
 
@@ -336,8 +337,11 @@ export default function Resignation() {
     <>
     
     <Typography className={styles.forTextOnBackground} variant='h6'>Resignation</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Resignation</Typography>
+      
+      
+      <SearchBar/>
       <AddResigneeeModal/>
       </Box>
 
@@ -393,10 +397,10 @@ export default function Resignation() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    <TableCell align="right">{row.status}</TableCell>
+                    <TableCell align="right">{row.role}</TableCell>
+                    <TableCell align="right">{row.reason}</TableCell>
+                    <TableCell align="right">{row.resignationdate}</TableCell>
                   </TableRow>
                 );
               })}
