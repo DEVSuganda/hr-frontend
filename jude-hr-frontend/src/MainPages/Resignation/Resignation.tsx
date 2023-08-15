@@ -148,7 +148,7 @@ const headCells: readonly HeadCell[] = [
 
 interface EnhancedTableProps {
   numSelected: number;
-  onRequestSort: (event: React.MouseEvent<Unknown>, property: keyof Data) => void;
+  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
@@ -159,7 +159,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
     props;
   const createSortHandler =
-    (property: keyof Data) => (event: React.MouseEvent<Unknown>) => {
+    (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
@@ -268,7 +268,7 @@ export default function Resignation() {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (
-    event: React.MouseEvent<Unknown>,
+    event: React.MouseEvent<unknown>,
     property: keyof Data,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -285,7 +285,7 @@ export default function Resignation() {
     setSelected([]);
   };
 
-  const handleClick = (event: React.MouseEvent<Unknown>, name: string) => {
+  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected: readonly string[] = [];
 
@@ -305,7 +305,7 @@ export default function Resignation() {
     setSelected(newSelected);
   };
 
-  const handleChangePage = (event: Unknown, newPage: number) => {
+  const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
 

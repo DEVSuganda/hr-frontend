@@ -27,25 +27,25 @@ import SearchBar from '../../components/SearchBar';
 
 
 interface Data {
-  calories: number;
-  carbs: number;
-  fat: string;
+  employeeid: number;
+  salary: number;
+  role: string;
   name: string;
   payslip: object;
 }
 
 function createData(
   name: string,
-  calories: number,
-  fat: string,
-  carbs: number,
+  employeeid: number,
+  role: string,
+  salary: number,
   payslip: object,
 ): Data {
   return {
     name,
-    calories,
-    fat,
-    carbs,
+    employeeid,
+    role,
+    salary,
     payslip,
   };
 }
@@ -121,26 +121,26 @@ const headCells: readonly HeadCell[] = [
     label: 'EMPLOYEE',
   },
   {
-    id: 'calories',
+    id: 'employeeid',
     numeric: true,
     disablePadding: false,
     label: 'EMPLOYEE ID',
   },
   {
-    id: 'fat',
-    numeric: true,
+    id: 'role',
+    numeric: false,
     disablePadding: false,
     label: 'ROLE',
   },
   {
-    id: 'carbs',
+    id: 'salary',
     numeric: true,
     disablePadding: false,
     label: 'SALARY($)',
   },
   {
     id: 'payslip',
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: 'PAYSLIP',
   },
@@ -261,7 +261,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
 
 export default function SalaryAndFinance() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
+  const [orderBy, setOrderBy] = React.useState<keyof Data>('employeeid');
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -396,9 +396,9 @@ export default function SalaryAndFinance() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
+                    <TableCell align="right">{row.employeeid}</TableCell>
+                    <TableCell align="right">{row.role}</TableCell>
+                    <TableCell align="right">{row.salary}</TableCell>
                     <TableCell align="right">{row.payslip}</TableCell>
                   </TableRow>
                 );

@@ -335,7 +335,7 @@ export default function Attendance() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
+  const visibleRows = React.useMemo<any[]>(
     () =>
       stableSort(rows, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
