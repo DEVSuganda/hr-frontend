@@ -30,21 +30,21 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface Data {
   calories: number;
-  status: object;
+  status: any;
   fat: string;
-  name: string;
-  action: object;
+  client: string;
+  action: any;
 }
 
 function createData(
-  name: string,
+  client: string,
   calories: number,
   fat: string,
-  status: object,
-  action: object,
+  status: any,
+  action: any,
 ): Data {
   return {
-    name,
+    client,
     calories,
     fat,
     status,
@@ -56,15 +56,15 @@ const rows = [
   createData('john smith', 305000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
   createData('Donut', 452000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
   createData('tom jill', 262000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
-  createData('Kengo Wada', 159000, "12/09/2023", "Accepted", <MoreVertIcon/>),
+  createData('Kengo Wada', 159000, "12/09/2023", <Typography>Accepted</Typography>, <MoreVertIcon/>),
   createData('Gingerbread', 356000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
   createData('Honeycomb', 408000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
-  createData('leo katwere', 237000, "12/09/2023", "Accepted", <MoreVertIcon/>),
+  createData('leo katwere', 237000, "12/09/2023", <Typography>Accepted</Typography>, <MoreVertIcon/>),
   createData('Jelly Bean', 375000, "12/09/2023", <Typography>Paid<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
   createData('KitKat', 518000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
   createData('Lollipop', 392000, "12/09/2023", <Typography>Declined<CloseIcon sx={{color:'red'}}></CloseIcon></Typography>, <MoreVertIcon/>),
-  createData('kate yoogg', 318000, "12/09/2023", "Expired", <MoreVertIcon/>),
-  createData('Nougat', 360000, "12/09/2023", "Expired", <MoreVertIcon/>),
+  createData('kate yoogg', 318000, "12/09/2023", <Typography>Expired</Typography>, <MoreVertIcon/>),
+  createData('Nougat', 360000, "12/09/2023", <Typography>Expired</Typography>, <MoreVertIcon/>),
   createData('Oreo', 437000, "12/09/2023", <Typography>Sent<DoneIcon sx={{color:'rgb(24, 210, 185)'}}></DoneIcon></Typography>, <MoreVertIcon/>),
 ];
 
@@ -96,7 +96,7 @@ function getComparator<Key extends keyof any>(
 // stableSort() brings sort stability to non-modern browsers (notably IE11). If you
 // only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
 // with exampleArray.slice().sort(exampleComparator)
-function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
+function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
   const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);
@@ -117,7 +117,7 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: 'name',
+    id: 'client',
     numeric: false,
     disablePadding: true,
     label: 'CLIENT',
@@ -280,19 +280,19 @@ export default function Sales() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
+      const newSelected = rows.map((n) => n.client);
       setSelected(newSelected);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event: React.MouseEvent<unknown>, client: string) => {
+    const selectedIndex = selected.indexOf(client);
     let newSelected: readonly string[] = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, client);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -320,13 +320,13 @@ export default function Sales() {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name: string) => selected.indexOf(name) !== -1;
+  const isSelected = (client: string) => selected.indexOf(client) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
+  const visibleRows = React.useMemo<any[]>(
     () =>
       stableSort(rows, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
@@ -365,17 +365,17 @@ export default function Sales() {
             />
             <TableBody>
               {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.name);
+                const isItemSelected = isSelected(row.client);
                 const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.name)}
+                    onClick={(event) => handleClick(event, row.client)}
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.name}
+                    key={row.client}
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
@@ -394,7 +394,7 @@ export default function Sales() {
                       scope="row"
                       padding="none"
                     >
-                      {row.name}
+                      {row.client}
                     </TableCell>
                     <TableCell align="right">{row.calories}</TableCell>
                     <TableCell align="right">{row.fat}</TableCell>

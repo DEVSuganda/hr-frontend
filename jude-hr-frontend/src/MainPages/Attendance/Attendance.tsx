@@ -29,13 +29,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface Data {
   name: string;
-  Day: object;
+  Day: any;
   
 }
 
 function createData(
   name: string,
-  Day: object,
+  Day: any,
 ): Data {
   return {
     name,
@@ -335,7 +335,7 @@ export default function Attendance() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
+  const visibleRows = React.useMemo<any[]>(
     () =>
       stableSort(rows, getComparator(order, orderBy)).slice(
         page * rowsPerPage,

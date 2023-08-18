@@ -7,7 +7,7 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/adminCharts/Header";
-import LineChart from "../../components/adminCharts/LineChart";
+//import LineChart from "../../components/adminCharts/LineChart";
 import GeographyChart from "../../components/adminCharts/GeographyChart";
 import BarChart from "../../components/adminCharts/BarChart";
 import StatBox from "../../components/adminCharts/StatBox";
@@ -167,7 +167,7 @@ const AdminDashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            {/* <LineChart isDashboard={true} /> */}
           </Box>
         </Box>
         <Box
