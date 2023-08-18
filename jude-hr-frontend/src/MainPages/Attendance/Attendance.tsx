@@ -29,13 +29,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface Data {
   name: string;
-  Day: object;
+  Day: any;
   
 }
 
 function createData(
   name: string,
-  Day: object,
+  Day: any,
 ): Data {
   return {
     name,

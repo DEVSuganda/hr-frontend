@@ -30,18 +30,18 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface Data {
   calories: number;
-  status: object;
+  status: any;
   fat: string;
   client: string;
-  action: object;
+  action: any;
 }
 
 function createData(
   client: string,
   calories: number,
   fat: string,
-  status: object,
-  action: object,
+  status: any,
+  action: any,
 ): Data {
   return {
     client,
@@ -96,7 +96,7 @@ function getComparator<Key extends keyof any>(
 // stableSort() brings sort stability to non-modern browsers (notably IE11). If you
 // only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
 // with exampleArray.slice().sort(exampleComparator)
-function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
+function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
   const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);

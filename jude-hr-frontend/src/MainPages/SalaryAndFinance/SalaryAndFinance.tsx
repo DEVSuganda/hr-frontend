@@ -31,7 +31,7 @@ interface Data {
   salary: number;
   role: string;
   name: string;
-  payslip: object;
+  payslip: any;
 }
 
 function createData(
@@ -39,7 +39,7 @@ function createData(
   employeeid: number,
   role: string,
   salary: number,
-  payslip: object,
+  payslip: any,
 ): Data {
   return {
     name,
@@ -324,7 +324,7 @@ export default function SalaryAndFinance() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
+  const visibleRows = React.useMemo<any[]>(
     () =>
       stableSort(rows, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
