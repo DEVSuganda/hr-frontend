@@ -60,6 +60,11 @@ import ClientProfile from '../MainPages/Clients/ClientProfile';
 import Login from "../MainPages/Authentication/Login";
 import style from '../App.css';
 
+
+// responsiveness
+
+
+
 const drawerWidth = 240;
 
 

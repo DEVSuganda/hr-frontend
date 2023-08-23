@@ -25,6 +25,12 @@ import AddIcon from '@mui/icons-material/Add';
 import SearchBar from '../../components/SearchBar';
 import AddAssetModal from '../../components/modals/AddAssetModal';
 
+//responsiveness
+
+import { useMediaQuery } from 'react-responsive';
+
+import MediaQuery from 'react-responsive'
+
 interface Data {
   calories: string;
   purchase: string;
