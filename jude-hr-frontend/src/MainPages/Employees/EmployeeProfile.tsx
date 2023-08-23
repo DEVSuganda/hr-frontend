@@ -10,6 +10,8 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import p1 from '../../assets/EmployeeImages/kengo.jpg'
 import '../../App.css'
 import Divider from '@mui/material/Divider';
+//responsiveness
+
 
 
 
@@ -37,8 +39,9 @@ export default function EmployeeProfile() {
   return (
     <>
     <div>
-    <Box sx={{ flexGrow: 1 }}>
-
+    
+    <Box sx={{ flexGrow: 1}}>
+    
 
     <Typography className={styles.forTextOnBackground} variant='h6'>Profile</Typography>
       <Box sx={{display: 'flex'}}>
@@ -49,8 +52,8 @@ export default function EmployeeProfile() {
 
       
       
-      <Grid container wrap='wrap' spacing={2} padding={2}>
-        <Grid item xs={12} md={12}>
+      <Grid container wrap='wrap' spacing={2} padding={2} sx={{display: 'flex'}}>
+        <Grid item xs={12} md={12} sx={{display: 'flex'}}>
         <ItemMain className={styles.forRows}>
         <img src={p1} className={styles.forProfilePictures}></img>
         <div className={styles.forInfoSpacing}>
@@ -151,7 +154,9 @@ export default function EmployeeProfile() {
         
         
       </Grid>
+      
     </Box>
+    
     </div>
     </>
   );

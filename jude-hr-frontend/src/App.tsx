@@ -19,8 +19,18 @@ import Login from "./MainPages/Authentication/Login";
 import MuiDrawer2 from "./components/MuiDrawer2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { useMediaQuery } from 'react-responsive'
 
 function App(){
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+
   // const theme = createTheme({
   //   typography: {
   //     fontFamily: '"Segoe UI"',
@@ -46,7 +56,14 @@ function App(){
   <>
     {/* <ThemeProvider theme={theme}> */}
     <CssBaseline />
-    <MuiDrawer2 />
+
+    {isDesktopOrLaptop && <MuiDrawer2 />}
+    {isBigScreen && <MuiDrawer2 />}
+    {isTabletOrMobile && <MuiDrawer2 />}
+    
+    {isRetina && <MuiDrawer2 />}
+
+    {/* <MuiDrawer2 /> */}
     {/* <Routes>
     <Route path="Login" element={<Login />}></Route>
       <Route path="Holidays" element={<Holidays />}></Route>
