@@ -10,7 +10,7 @@ export default function EmployeeModal() {
   return (
     <React.Fragment>
       
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: '#bbff38', color: 'black', fontSize: 12}}>
         Add Employee
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>

@@ -51,19 +51,19 @@ function createData(
 }
 
 const rows = [
-  createData('john smith', 305, "Web Developer", 67000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Donut', 452, "Team Lead", 51000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('tom jill', 262, "Project Leader", 24000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Kengo Wada', 159, "Web Designer", 24000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Gingerbread', 356, "Web Developer", 49000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Honeycomb', 408, "Back-end Developer", 87000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('leo katwere', 237, "Front-end Developer", 37000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Jelly Bean', 375, "Senior Developer", 94000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('KitKat', 518, "Web Developer", 65000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Lollipop', 392, "Web Developer", 98000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('kate yoogg', 318, "Web Developer", 81000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Nougat', 360, "Web Developer", 91000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
-  createData('Oreo', 437, "Web Developer", 63000, <Button sx={{backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>Generate Payslip</Button>),
+  createData('john smith', 305, "Web Developer", 67000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Donut', 452, "Team Lead", 51000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('tom jill', 262, "Project Leader", 24000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Kengo Wada', 159, "Web Designer", 24000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Gingerbread', 356, "Web Developer", 49000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Honeycomb', 408, "Back-end Developer", 87000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('leo katwere', 237, "Front-end Developer", 37000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Jelly Bean', 375, "Senior Developer", 94000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('KitKat', 518, "Web Developer", 65000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Lollipop', 392, "Web Developer", 98000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('kate yoogg', 318, "Web Developer", 81000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Nougat', 360, "Web Developer", 91000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
+  createData('Oreo', 437, "Web Developer", 63000, <Button sx={{backgroundColor: '#bbff38', color: 'black'}}>Generate Payslip</Button>),
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -165,7 +165,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
   return (
     
-    <TableHead sx={{backgroundColor: 'rgb(29, 235, 207)'}}>
+    <TableHead sx={{backgroundColor: '#bbff38'}}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox

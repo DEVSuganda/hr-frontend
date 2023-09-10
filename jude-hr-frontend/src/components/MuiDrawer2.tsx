@@ -36,7 +36,7 @@ import PolicyRoundedIcon from '@mui/icons-material/PolicyRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
 import SearchIcon from '@mui/icons-material/Search';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import styles from '../components/myStyles.module.css'
 
 
@@ -291,7 +291,7 @@ const itemsList = [
         {itemsList.map((item, index) => {
             const { text, icon, onClick } = item;
             return (
-              <Box sx={{":hover": {bgcolor: 'rgb(252, 214, 211)', color: 'white'}}}>
+              <Box sx={{":hover": {bgcolor: '#bbff38', color: 'white'}}}>
             <ListItem key={text} onClick={onClick}disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -314,6 +314,7 @@ const itemsList = [
       <Route path="Onboard" element={<Onboard />}></Route>
       <Route path="Profiles" element={<Profiles />}></Route>
       <Route path="AdminDashboard" element={<AdminDashboard />}></Route>
+      <Route path="" element={<Navigate to="AdminDashboard" />}></Route>
       <Route path="EmployeeDashboard" element={<EmployeeDashboard />}></Route>
       <Route path="KnowledgeBase" element={<KnowledgeBase />}></Route>
       <Route path="Performance" element={<Performance />}></Route>

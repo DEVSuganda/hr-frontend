@@ -31,20 +31,22 @@ const ItemMain = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: 'left',  
   height: 330,
+  display: 'flex',
   width: '100%',
+  
   color: theme.palette.text.secondary,
 }));
 
 export default function EmployeeProfile() {
   return (
-    <>
+    
     <div>
     
     <Box sx={{ flexGrow: 1}}>
     
 
     <Typography className={styles.forTextOnBackground} variant='h6'>Profile</Typography>
-      <Box sx={{display: 'flex'}}>
+      <Box sx={{display: 'flex', alignItems:'center'}}>
       <Typography className={styles.forMinorTextOnBackground}>Profile</Typography>
       
       </Box>
@@ -52,8 +54,8 @@ export default function EmployeeProfile() {
 
       
       
-      <Grid container wrap='wrap' spacing={2} padding={2} sx={{display: 'flex'}}>
-        <Grid item xs={12} md={12} sx={{display: 'flex'}}>
+      <Grid container spacing={2} padding={2}>
+        <Grid item xs={12} md={12}>
         <ItemMain className={styles.forRows}>
         <img src={p1} className={styles.forProfilePictures}></img>
         <div className={styles.forInfoSpacing}>
@@ -158,6 +160,6 @@ export default function EmployeeProfile() {
     </Box>
     
     </div>
-    </>
+    
   );
 }

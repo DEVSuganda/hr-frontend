@@ -64,7 +64,7 @@ export default function Profiles() {
 
   const navigate = useNavigate();
   return (
-    <>
+    
     <div>
     <Box sx={{ flexGrow: 1 }}>
       <Typography className={styles.forTextOnBackground} variant='h6'>Employees</Typography>
@@ -273,6 +273,6 @@ export default function Profiles() {
       </Grid>
     </Box>
     </div>
-    </>
+    
   );
 }

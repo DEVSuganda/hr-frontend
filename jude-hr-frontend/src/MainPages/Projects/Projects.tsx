@@ -32,7 +32,7 @@ export default function Projects() {
 
 
     <Typography className={styles.forTextOnBackground} variant='h6'>Projects</Typography>
-      <Box sx={{display: 'flex', alignItems:'center'}}>
+      <Box sx={{display: 'flex', alignItems:'center', paddingBottom: 2}}>
       <Typography className={styles.forMinorTextOnBackground}>Projects</Typography>
       
       <SearchBar/>
@@ -75,7 +75,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={26} variant='determinate' sx={{marginTop: 2}} />
+          <LinearProgress color="inherit" value={26} variant='determinate' sx={{marginTop: 2, color: '#bbff38'}} />
           </div>
         </Item>
         </Grid>
@@ -117,7 +117,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={48} sx={{marginTop: 2}} />
+          <LinearProgress color="inherit" value={48} sx={{marginTop: 2, color: '#bbff38'}} />
           </div>
           </Item>
         </Grid>
@@ -159,7 +159,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={86} variant='determinate' sx={{marginTop: 2}} />
+          <LinearProgress color="inherit" value={86} variant='determinate' sx={{marginTop: 2, color: '#bbff38'}} />
           </div>
           </Item>
         </Grid>
@@ -201,7 +201,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={88} sx={{marginTop: 2}} />
+          <LinearProgress color="inherit" value={88} sx={{marginTop: 2, color: '#bbff38'}} />
           </div>
           </Item>
         </Grid>
@@ -243,7 +243,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={50} variant='determinate' sx={{marginTop: 2}} />
+          <LinearProgress color="inherit" value={50} variant='determinate' sx={{marginTop: 2, color: '#bbff38'}} />
           </div>
           </Item>
         </Grid>
@@ -286,7 +286,7 @@ export default function Projects() {
 
           <div>
           <Typography className={styles.forContainers1st}>Progress:</Typography>  
-          <LinearProgress color="inherit" value={100} variant='determinate' sx={{marginTop: 2}}/>
+          <LinearProgress color="inherit" value={100} variant='determinate' sx={{marginTop: 2, color: '#bbff38'}}/>
           </div>
           </Item>
         </Grid>

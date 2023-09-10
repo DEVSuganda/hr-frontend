@@ -3,14 +3,14 @@ import {FormControl, FormLabel, Input, Modal, ModalDialog, Stack, Typography} fr
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AddIcon from '@mui/icons-material/Add';
 import styles from '../../components/myStyles.module.css'
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 export default function AddProjectModal() {
   const [open, setOpen] = React.useState<boolean>(false);
   return (
     <React.Fragment>
       
-      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: 'rgb(24, 210, 185)', color: 'white'}}>
+      <Button variant='outlined' startIcon={<AddIcon />} className={styles.forAddButton} onClick={() => setOpen(true)} sx={{ backgroundColor: '#bbff38', color: 'black', fontSize: 12}}>
         Add Project
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>

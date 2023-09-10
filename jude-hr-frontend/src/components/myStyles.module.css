@@ -31,7 +31,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .forAppBar {
-    background-color: rgb(24, 210, 185);
+    background-color: #6f6e6f;
     
     
   }
@@ -196,7 +196,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
   .forPayslipButton {
   
-    color: rgb(24, 210, 185);
+    color: #6f6e6f;
     
     
   }
@@ -211,7 +211,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 
   .knowledgeBaseText {
-    color: rgb(24, 210, 185);
+    color: #6f6e6f;
     text-align: left;
     padding-bottom: 0em;
     font-family: JosefinItalic;
@@ -233,7 +233,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
   .forIcons{
     
-    color: rgb(24, 210, 185);
+    color: #6f6e6f;
     
     
   }
@@ -241,7 +241,7 @@ p, h1, h2, h3, h4, h5, h6 {
   
 
   .forDrawerHeader{
-    background-color: rgb(24, 210, 185);
+    background-color: #6f6e6f;
   }
 
   
