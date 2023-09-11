@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Button } from '@mui/material';
-import puff from '../assets/EmployeeImages/puff.png'
+import puff from '../assets/EmployeeImages/devslogo.jpg'
 
 //before
 import IconButton from '@mui/material/IconButton';
@@ -243,8 +243,9 @@ const itemsList = [
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1}}>
-          <img src={puff} className={styles.forLogo}></img> DEVSUganda
+          <img src={puff} className={styles.forLogo}></img>
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex', paddingLeft: 2}}>
+              DEVSUganda
           </Typography>
           
           <IconButton

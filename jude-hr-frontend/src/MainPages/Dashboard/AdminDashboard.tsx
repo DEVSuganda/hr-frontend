@@ -30,6 +30,21 @@ const AdminDashboard = () => {
     alignItems: 'center',
     justifyContent: 'center',
     height: 200,
+    width: 350,
+    color: theme.palette.text.secondary,
+    alignContent: 'center',
+    display: 'flex',
+    flexDirection: 'column'
+    
+  }));
+
+  const DashItemRev = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 200,
     color: theme.palette.text.secondary,
     alignContent: 'center',
     display: 'flex',
@@ -78,7 +93,7 @@ const AdminDashboard = () => {
         <Box>
           <Button
             sx={{
-              backgroundColor: colors.blueAccent[700],
+              backgroundColor: '#bbff38',
               color: colors.grey[100],
               fontSize: "14px",
               fontWeight: "bold",
@@ -216,7 +231,7 @@ const AdminDashboard = () => {
         >
 
           <Grid item xs={5} md={2.5}>
-              <DashItem>
+              <DashItemRev>
           <Box
             mt="25px"
             p="0 30px"
@@ -226,6 +241,7 @@ const AdminDashboard = () => {
           >
             <Box>
               <Typography
+              sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}
                 variant="h5"
                 fontWeight="600"
                 color={colors.grey[100]}
@@ -233,6 +249,7 @@ const AdminDashboard = () => {
                 Revenue Generated
               </Typography>
               <Typography
+              sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
@@ -250,7 +267,7 @@ const AdminDashboard = () => {
           </Box>
 
 
-          </DashItem>
+          </DashItemRev>
           </Grid>
           <Box height="250px" m="-20px 0 0 0">
             {/* <LineChart isDashboard={true} /> */}
@@ -262,12 +279,17 @@ const AdminDashboard = () => {
           gridColumn="span 4"
           gridRow="span 4"
           
-          overflow='scroll'
+          
           paddingTop={16}
           
         >
+
+          <Typography
+            sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 }, paddingBottom: 3 }} color={colors.grey[100]} variant="h5" fontWeight="600">
+              Recent Transactions
+            </Typography>
           <Grid item xs={5} md={2.5}>
-              <DashItemLong>
+              <DashItemLong sx={{overflow: 'auto'}}>
 
 
           
@@ -280,9 +302,7 @@ const AdminDashboard = () => {
             p="15px"
           >
             
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
-            </Typography>
+            
           </Box>
           {mockTransactions.map((transaction, i) => (
             <Box
@@ -295,15 +315,17 @@ const AdminDashboard = () => {
             >
               <Box>
                 <Typography
+                sx={{ fontSize: { xs: 8, sm: 8, md: 10, xl: 14 } }}
                   color={colors.greenAccent[500]}
                   variant="h5"
                   fontWeight="600"
                   fontSize={8}
-                  letterSpacing={2}
+                  letterSpacing={18}
                 >
                   {transaction.txId}
                 </Typography>
-                <Typography color={colors.grey[100]}>
+                <Typography
+                sx={{ fontSize: { xs: 8, sm: 8, md: 10, xl: 14 } }} color={colors.grey[100]}>
                   {transaction.user}
                 </Typography>
               </Box>
@@ -336,7 +358,8 @@ const AdminDashboard = () => {
               <DashItemMid>
 
 
-          <Typography variant="h5" fontWeight="600">
+          <Typography
+          sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }} variant="h5" fontWeight="600">
             Campaign
           </Typography>
           <Box
@@ -347,13 +370,15 @@ const AdminDashboard = () => {
           >
             <ProgressCircle size="125" />
             <Typography
+            sx={{  mt: "15px", fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}
               variant="h5"
               color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
+             
             >
               $48,352 revenue generated
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography
+            sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}>Includes extra misc expenditures and costs</Typography>
           </Box>
 
           </DashItemMid>
@@ -372,6 +397,7 @@ const AdminDashboard = () => {
             
         
           <Typography
+          sx={{ fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}
             variant="h5"
             fontWeight="600"
           
@@ -397,9 +423,10 @@ const AdminDashboard = () => {
       <Grid item xs={5} md={2.5}>
             
           <Typography
+          sx={{ marginBottom: "15px", fontSize: { xs: 10, sm: 16, md: 20, xl: 28 } }}
             variant="h5"
             fontWeight="600"
-            sx={{ marginBottom: "15px" }}
+           
           >
             Geography Based Traffic
           </Typography>
